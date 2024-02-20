@@ -1,0 +1,6 @@
+@PaperApi_HostAddress = http://localhost:5148
+
+GET {{PaperApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

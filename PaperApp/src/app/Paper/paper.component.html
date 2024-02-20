@@ -1,0 +1,23 @@
+<body>
+  <form class="inputs">
+    <div class="input">
+    <label class="input-label"> M: <input name="M" [(ngModel)]="M" type="number" min="1" ></label>
+    <label class="input-label2"> N: <input name="N" [(ngModel)]="N" type="number" min="1" ></label>
+    <button (click)="generateGrid()">Generate Grid</button>
+  </div>
+    <div class="uncut-parts">
+      Uncut parts: {{uncutParts}}
+    </div>
+  </form>
+  
+  <div class="grid-contain" *ngIf="gridExist">
+    <div class="grid-container" *ngFor="let row of grid; let i = index">
+      <div  class="cell" *ngFor="let cell of row; let j = index" 
+        [class.cut]="cell.IsCut === 1" 
+        (mousedown)="mouseDown(); cell.IsCut === 1 ? removeCut(i, j) : cutCell(i, j)"
+        (mouseup)="mouseUp()"
+        (mousemove)="mouseMove(i, j)">
+      </div>
+    </div>
+  </div>
+</body>

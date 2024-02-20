@@ -1,0 +1,11 @@
+body{
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+}
+app-paper{
+    height: 150px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
